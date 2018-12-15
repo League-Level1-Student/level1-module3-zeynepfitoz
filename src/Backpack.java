@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2017
  *    Level 1
@@ -8,13 +10,28 @@ public class Backpack
 	private Pencil pencil;
 	private Ruler ruler;
 	private Textbook textbook;
+	
 
 	private void packAndCheck()
 	{
+	
 		// Your mission is to go to school.
 		// 1. First you need to put all your supplies into your backpack - use the putInBackpack(...) methods
-
+Pencil p = new Pencil();
+		putInBackpack(p);
+		String writing = JOptionPane.showInputDialog("What do you want to write?");
+		p.write("You wrote "+writing);
+		Ruler r = new Ruler();
+		putInBackpack(r);
+		r.measure();
+		Textbook t = new Textbook();
+		putInBackpack(t);
+		t.read();
 		goToSchool();
+	
+		
+		
+	
 	}
 
 	public static void main(String[] args)
