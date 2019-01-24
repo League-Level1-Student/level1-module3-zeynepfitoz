@@ -78,8 +78,13 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-	AudioClip n = mp.loadSound("moo.wav");
-	n.play();
+	
+	int color = backgroundImage.getRGB(e.getX(), e.getY());
+	System.out.println(color);
+	if (color == -69429 || color == -820480) {
+		AudioClip n = mp.loadSound("moo.wav");
+		n.play();
+	}
 	}
 
 	@Override
